@@ -1,8 +1,83 @@
 # Data::Criteria
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/data/criteria`. To experiment with that code, run `bin/console` for an interactive prompt.
+is a set of conditions, is a matcher for a hash or an object. Data::Criteria is useful for filtering a collection(e.g. array of hases) by complex conditions.
 
-TODO: Delete this and the text above, and describe your gem
+**Example**
+
+```ruby
+require 'data/criteria'
+
+# You have users collection, then want to filter them.
+users = [
+  {
+    id: 1,
+    name: "Takeshi",
+    city: 'Kagawa',
+    age: 33,
+    money: 100_000,
+  },
+  {
+    id: 2,
+    name: "Ryota",
+    city: 'Hiroshima',
+    age: 18,
+    money: 500,
+  },
+  {
+    id: 3,
+    name: "Masanori",
+    city: 'Hokkaido',
+    age: 14,
+    money: 30,
+  },
+]
+
+# filter by name.
+criteria = Data::Criteria.new(name: 'Takeshi')
+users.select {|user| criteria.match_all?(user) }
+# => [
+#   {
+#     id: 1,
+#     name: "Takeshi",
+#     city: 'Kagawa',
+#     age: 33,
+#     money: 100_000,
+#   }
+# ]
+
+# filter by name AND city AND age AND money.
+criteria = Data::Criteria.new(
+  name: /ta/i,
+  city: %w(Kagawa Hiroshima),
+  age: 0..20,
+  money: '>= 300',
+)
+users.select {|user| criteria.match_all?(user) }
+# => [
+#   {
+#     id: 2,
+#     name: "Ryota",
+#     city: 'Hiroshima',
+#     age: 18,
+#     money: 500,
+#   }
+# ]
+
+# filter by age with custom matcher.
+criteria = Data::Criteria.new(
+  age: proc {|actual| actual % 7 == 0 },
+)
+users.select {|user| criteria.match_all?(user) }
+# => [
+#   {
+#     id: 3,
+#     name: "Masanori",
+#     city: 'Hokkaido',
+#     age: 14,
+#     money: 30,
+#   },
+# ]
+```
 
 ## Installation
 
@@ -20,9 +95,6 @@ Or install it yourself as:
 
     $ gem install data-criteria
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
