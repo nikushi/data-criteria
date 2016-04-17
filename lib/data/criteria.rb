@@ -1,6 +1,7 @@
 class Data
   class Criteria
     require_relative 'criteria/filter'
+    require_relative 'criteria/hash_proxy'
     require_relative 'criteria/matcher'
     require_relative 'criteria/version'
 
@@ -18,6 +19,7 @@ class Data
     end
 
     def match_all?(hash)
+      hash = HashProxy.new(hash)
       @filters.all? do |key, filters|
         filters.all?{|filter| hash.key?(key) && filter.call(hash[key]) }
       end
