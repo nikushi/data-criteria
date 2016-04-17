@@ -5,7 +5,7 @@ is a set of conditions, is a matcher for a hash or an object. Data::Criteria is 
 **Example**
 
 ```ruby
-require 'data/criteria'
+require 'data-criteria'
 
 # You have users collection, then want to filter them.
 users = [
