@@ -1,8 +1,10 @@
 # Data::Criteria
 
-is a set of conditions, is a matcher for a hash or an object. Data::Criteria is useful for filtering a collection(e.g. array of hases) by complex conditions.
+Data::Criteria is powerful matcher for hashes. You can define matcheres like ActiveRecord's `#where` syntax(but it doesn't depend on Rails).
 
-**Example**
+For example, it is useful to filter array of hases.
+
+## Example
 
 ```ruby
 require 'data-criteria'

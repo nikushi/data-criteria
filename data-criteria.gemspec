@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Nobuhiro Nikushi"]
   spec.email         = ["deneb.ge@gmail.com"]
 
-  spec.summary       = %q{Data matching criteria}
-  spec.description   = %q{Data matching criteria for hashes and objects}
+  spec.summary       = %q{Powerful matcher for hashes}
+  spec.description   = %q{powerful matcher for hashes. You can define matcheres like ActiveRecord's `#where` syntax(but it doesn't depend on Rails).}
   spec.homepage      = "https://github.com/niku4i/data-criteria"
   spec.license       = "MIT"
 
