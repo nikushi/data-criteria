@@ -1,4 +1,4 @@
-# Data::Criteria
+# Data::Criteria [![Build Status](https://travis-ci.org/niku4i/data-criteria.svg?branch=master)](https://travis-ci.org/niku4i/data-criteria)
 
 Data::Criteria is powerful matcher for hashes. You can define matcheres like ActiveRecord's `#where` syntax(but it doesn't depend on Rails).
 
