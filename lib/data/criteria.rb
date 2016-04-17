@@ -25,6 +25,13 @@ class Data
       end
     end
 
+    def match_any?(hash)
+      hash = HashProxy.new(hash)
+      @matchers.any? do |key, matchers|
+        matchers.any?{|matcher| hash.key?(key) && matcher.call(hash[key]) }
+      end
+    end
+
     private
 
     def add_matcher(key, matcher)
