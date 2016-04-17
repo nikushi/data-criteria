@@ -1,8 +1,8 @@
 class Data
   class Criteria
-    class Filter
-      def initialize(expected)
-        @matcher = (
+    class MatcherFactory
+      class << self
+        def create(expected)
           case expected
           when Array, Range
             InMatcher.new(expected)
@@ -19,11 +19,7 @@ class Data
           else
             EqMatcher.new(expected)
           end
-        )
-      end
-
-      def call(actual)
-        @matcher.call(actual)
+        end
       end
     end
   end
