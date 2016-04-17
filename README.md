@@ -1,6 +1,6 @@
 # Data::Criteria [![Build Status](https://travis-ci.org/niku4i/data-criteria.svg?branch=master)](https://travis-ci.org/niku4i/data-criteria)
 
-Data::Criteria is powerful matcher for hashes. You can define matcheres like ActiveRecord's `#where` syntax(but it doesn't depend on Rails).
+Data::Criteria is powerful matcher for hashes. You can define matchers like ActiveRecord's `#where` syntax(but it doesn't depend on Rails).
 
 For example, it is useful to filter array of hases.
 
