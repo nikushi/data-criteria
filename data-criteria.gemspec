@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Powerful matcher for hashes}
   spec.description   = %q{powerful matcher for hashes. You can define matcheres like ActiveRecord's `#where` syntax(but it doesn't depend on Rails).}
-  spec.homepage      = "https://github.com/niku4i/data-criteria"
+  spec.homepage      = "https://github.com/nikushi/data-criteria"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

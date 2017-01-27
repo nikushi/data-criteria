@@ -1,4 +1,4 @@
-# Data::Criteria [![Build Status](https://travis-ci.org/niku4i/data-criteria.svg?branch=master)](https://travis-ci.org/niku4i/data-criteria)
+# Data::Criteria [![Build Status](https://travis-ci.org/nikushi/data-criteria.svg?branch=master)](https://travis-ci.org/nikushi/data-criteria)
 
 Data::Criteria is powerful matcher for hashes. You can define matchers like ActiveRecord's `#where` syntax(but it doesn't depend on Rails).
 
@@ -106,7 +106,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/niku4i/data-criteria.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nikushi/data-criteria.
 
 
 ## License
